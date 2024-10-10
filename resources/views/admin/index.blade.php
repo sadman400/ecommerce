@@ -1,24 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin page</title>
+    @include('admin.css')
 </head>
+
 <body>
 
-    <h1>This is admin page</h1>
+    @include('admin.header')
+    <div class="d-flex align-items-stretch">
+        <!-- Sidebar Navigation-->
+        @include('admin.sidebar')
+        <!-- Sidebar Navigation end-->
+        <div class="page-content">
 
+            @include('admin.body')
 
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-
-        <x-dropdown-link :href="route('logout')"
-                onclick="event.preventDefault();
-                            this.closest('form').submit();">
-            {{ __('Log Out') }}
-        </x-dropdown-link>
-    </form>
-
+            <footer class="footer">
+                <div class="footer__block block no-margin-bottom">
+                    <div class="container-fluid text-center">
+                        <!-- Please do not remove the backlink to us unless you support us at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+                        <p class="no-margin-bottom">2018 &copy; Your company. Download From <a target="_blank" href="https://templateshub.net">Templates Hub</a>.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="{{asset('admincss/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('admincss/vendor/popper.js/umd/popper.min.js')}}"> </script>
+    <script src="{{asset('admincss/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('admincss/vendor/jquery.cookie/jquery.cookie.js')}}"> </script>
+    <script src="{{asset('admincss/vendor/chart.js/Chart.min.js')}}"></script>
+    <script src="{{asset('admincss/vendor/jquery-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('admincss/js/charts-home.js')}}"></script>
+    <script src="{{asset('admincss/js/front.js')}}"></script>
 </body>
+
 </html>
